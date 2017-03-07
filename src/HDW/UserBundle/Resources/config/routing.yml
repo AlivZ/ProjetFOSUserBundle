@@ -1,0 +1,3 @@
+hello:
+    path:     /bonjour
+    defaults: { _controller: HDWUserBundle:Home:index }
