@@ -1,4 +1,0 @@
-services:
-#    hdw_user.example:
-#        class: HDW\UserBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]

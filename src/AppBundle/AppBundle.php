@@ -1,9 +1,9 @@
 <?php
 
-namespace HDW\UserBundle;
+namespace AppBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class HDWUserBundle extends Bundle
+class AppBundle extends Bundle
 {
 }
