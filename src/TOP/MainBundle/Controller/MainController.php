@@ -34,10 +34,10 @@ class MainController extends Controller
     public function sendEmailAction()
     {
     	$message = \Swift_Message::newInstance()
-        ->setSubject('Hello Email')
-        ->setFrom('send@example.com')
-        ->setTo('recipient@example.com')
-        ->setBody('Hi Joe !');
+        ->setSubject('DONT LET BE DREAMS, BE DREAMS')
+        ->setFrom('a@a.a')
+        ->setTo('hugodwiutinfo@gmail.com')
+        ->setBody('JUST DO IT !');
 
     $this->get('mailer')->send($message);
 
