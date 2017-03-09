@@ -1,0 +1,17 @@
+# src/TOP/MainBundle/Resources/config/routing.yml - ajout de UserBundle
+
+top_main_homepage:
+    path: /
+    defaults: { _controller: TOPMainBundle:Main:index }
+
+top_main_right:
+    path: /right
+    defaults: { _controller: TOPMainBundle:Main:right }
+
+top_main_left:
+    path: /left
+    defaults: { _controller: TOPMainBundle:Main:left }
+
+top_main_sendemail:
+    path: /mail 
+    defaults : { _controller: TOPMainBundle:Main:sendEmail}

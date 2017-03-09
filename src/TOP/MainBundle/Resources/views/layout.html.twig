@@ -1,0 +1,68 @@
+{# src/TOP/MainBundle/Resources/views/layout.html.twig - Test du Controller #}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Layout{% endblock %}</title>
+
+    {% block stylesheets %}
+      {# On charge le CSS de bootstrap depuis le site directement #}
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    {% endblock %}
+  </head>
+
+  <body>
+  <div class="container">
+    <div id="header" class="jumbotron">
+      <h1>Welcome</h1>
+      <p>
+        Ceci est mon 3eme Jour de Stage
+      </p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="http://wiki.teamliquid.net/commons/images/c/cb/Totalbiscuit-TANK20130629-220151.jpg">
+          Clique ici pour gagner 50000 euros ! ;)
+        </a>
+      </p>
+    </div>
+
+    <div class="row">
+      <div id="menu" class="col-md-3">
+        <h3>Direction</h3>
+        <ul class="nav nav-pills nav-stacked">
+        {% if is_granted('ROLE_ADMIN') %}
+          <li><a href="{{ path('top_main_right') }}">Aller a Droite</a></li>
+        {% endif %}
+          <li><a href="{{ path('top_main_left') }}">Aller a Gauche</a></li>
+        </ul>
+    </div>
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+      Connecté en tant que {{ app.user.username }}
+      -
+      <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+    {% else %}
+      <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+    {% endif %}
+
+    {% block body %}
+    	
+    {% endblock %}
+
+    <hr>
+
+    <footer>
+      <p>Petit test de la date, on est en {{ 'now'|date('Y') }}.</p>
+    </footer>
+  </div>
+
+  {% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  {% endblock %}
+
+  </body>
+</html>

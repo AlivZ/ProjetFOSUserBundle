@@ -1,0 +1,21 @@
+{# src/OC/UserBundle/Resources/views/Security/login.html.twig - Creation de userBundle#}
+
+{% extends "TOPMainBundle::layout.html.twig" %}
+
+{% block body %}
+
+  {% if error %}
+    <div class="alert alert-danger">{{ error.message }}</div>
+  {% endif %}
+
+  <form action="{{ path('fos_user_security_check') }}" method="post">
+    <label for="username">Identifiant :</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <br />
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="_password" />
+    <br />
+    <input type="submit" value="Connexion" />
+  </form>
+
+{% endblock %}
