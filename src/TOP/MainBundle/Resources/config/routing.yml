@@ -15,3 +15,7 @@ top_main_left:
 top_main_sendemail:
     path: /mail 
     defaults : { _controller: TOPMainBundle:Main:sendEmail}
+
+#top_test_cassandra:
+ #   path: /cassandra
+  #  defaults: { _controller: TOPMainBundle:Main:test }

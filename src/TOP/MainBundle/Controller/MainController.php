@@ -43,4 +43,29 @@ class MainController extends Controller
 
     return $this->render('TOPMainBundle:Main:sent.html.twig');
     }
+
+    /*public function testAction()
+    {
+        $cassandra = $this->get('m6web_cassandra.client.myclient');
+
+        $prepared = $cassandra->prepare("INSERT INTO test (id, title) VALUES(?, ?)");
+
+        $batch     = new Cassandra\BatchStatement(Cassandra::BATCH_LOGGED);
+        $batch->add($prepared, ['id' => 1, 'title' => 'my title']);
+        $batch->add($prepared, ['id' => 2, 'title' => 'my title 2']);
+
+        $cassandra->execute($batch);
+
+        $statement = new Cassandra\SimpleStatement('SELECT * FROM test');
+        $result = $cassandra->execute($statement);
+
+        foreach ($result as $row) {
+            // do something with $row
+        }
+
+        $statement = new Cassandra\SimpleStatement('SELECT * FROM test');
+        $result = $cassandra->executeAsync($statement);
+
+        return $this->render('TOPMainBundle:Main:test.html.twig');
+    }*/
 }

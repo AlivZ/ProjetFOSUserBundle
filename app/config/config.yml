@@ -76,3 +76,14 @@ fos_user:
     from_email:
         address: "noreply@yourcompany.com"
         sender_name: "No Reply"
+
+cassandra:
+    connections:
+        default:
+            keyspace: "mykeyspace"
+            hosts:
+                - 127.0.0.1
+                - 127.0.0.2
+                - 127.0.0.3
+            user: ''
+            password: ''
